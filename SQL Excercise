@@ -1,0 +1,35 @@
+CREATE TABLE Student (
+StudentID INT NOT NULL,
+FirstName varchar(255),
+LastName varchar(255),
+DateOfBirth varchar(255),
+Email varchar(255),
+Phone int(15),
+PRIMARY KEY (StudentID)
+);
+
+CREATE TABLE Enrollment(
+EnrollmentID INT PRIMARY KEY,
+StudentID INT,
+CourseID INT,
+EnrollmentDate DATE,
+Grade varchar(255),
+FOREIGN KEY (StudentID) REFERENCES Student (StudentID),
+FOREIGN KEY (CourseID) REFERENCES Course (CourseID)
+);
+
+CREATE TABLE Course(
+CourseID int NOT Null,
+CourseName varchar(255),
+Credits INT,
+PRIMARY KEY (CourseID)
+);
+
+CREATE TABLE Instructor (
+InstructorID INT NOT NULL,
+FirstName varchar(255),
+LastName varchar(255),
+Email varchar(255),
+Phone int(15),
+PRIMARY KEY (InstructorID)
+);
